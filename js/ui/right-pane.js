@@ -776,5 +776,4 @@ async function startRecording() {
 
 async function endRecording() {
   global.recorder.stop();
-  global.recorder.dispose();
 }
