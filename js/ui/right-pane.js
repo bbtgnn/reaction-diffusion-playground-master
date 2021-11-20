@@ -759,32 +759,22 @@ function setupActions() {
       startRecording();
     });
 
-  // actionsFolder
-  //   .addButton({
-  //     title: "End recording",
-  //   })
-  //   .on("click", () => {
-  //     endRecording();
-  //   });
+  actionsFolder
+    .addButton({
+      title: "End recording",
+    })
+    .on("click", () => {
+      endRecording();
+    });
 }
 
 // Recording
 
 async function startRecording() {
-  const canvas = document.querySelector("#container > canvas");
-  const canvasRecorder = canvasRecord(canvas);
-  canvasRecorder.start();
-
-  // Let it run for 2 seconds
-  await sleep(10000);
-
-  // Stop and dispose
-  canvasRecorder.stop();
-  canvasRecorder.dispose();
+  global.recorder.start();
 }
 
-// async function endRecording() {
-//   console.log("End");
-// }
-
-const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+async function endRecording() {
+  global.recorder.stop();
+  global.recorder.dispose();
+}

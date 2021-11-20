@@ -10,6 +10,8 @@ import parameterValues from "./parameterValues";
 import { displayUniforms, passthroughUniforms } from "./uniforms";
 import { displayMaterial, passthroughMaterial } from "./materials";
 
+import canvasRecord from "canvas-record";
+
 let bufferImage, bufferCanvasCtx;
 
 export const InitialTextureTypes = {
@@ -21,6 +23,10 @@ export const InitialTextureTypes = {
 };
 
 export function drawFirstFrame(type = InitialTextureTypes.CIRCLE) {
+  //
+  global.canvas = document.querySelector("#container > canvas");
+  global.recorder = canvasRecord(global.canvas);
+
   // Grab the invisible canvas context that we can draw initial image data into
   global.bufferCanvas = document.querySelector("#buffer-canvas");
   bufferCanvasCtx = bufferCanvas.getContext("2d");
