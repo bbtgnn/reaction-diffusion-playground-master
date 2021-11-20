@@ -771,12 +771,16 @@ function setupActions() {
 // Recording
 
 async function startRecording() {
+  global.recorder = await canvasRecord(global.canvas);
   global.recorder.start();
   console.log("Recording started");
   console.log(global.recorder);
 }
 
 async function endRecording() {
+  console.log(global.recorder);
   global.recorder.stop();
+  global.recorder.dispose();
   console.log("Recording ended");
+  console.log("----------------------");
 }

@@ -25,7 +25,6 @@ export const InitialTextureTypes = {
 export function drawFirstFrame(type = InitialTextureTypes.CIRCLE) {
   //
   global.canvas = document.querySelector("#container > canvas");
-  global.recorder = canvasRecord(global.canvas);
 
   // Grab the invisible canvas context that we can draw initial image data into
   global.bufferCanvas = document.querySelector("#buffer-canvas");
