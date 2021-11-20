@@ -22,18 +22,18 @@ export default {
   timestep: {
     min: 0.0,
     max: 2.0,
-    initial: 1.0,
+    initial: 0.08,
   },
   canvas: {
     width: {
       min: 0,
       max: window.innerWidth,
-      initial: 204,
+      initial: 270,
     },
     height: {
       min: 0,
       max: window.innerHeight,
-      initial: 418,
+      initial: 480,
     },
     scale: {
       min: 0.01,
